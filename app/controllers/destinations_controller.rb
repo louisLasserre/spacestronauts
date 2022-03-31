@@ -8,6 +8,11 @@ class DestinationsController < ApplicationController
 
   # GET /destinations/1 or /destinations/1.json
   def show
+
+  end
+
+  def choose
+    @destinations = Destination.all
   end
 
   # GET /destinations/new

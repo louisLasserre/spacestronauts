@@ -6,15 +6,17 @@
 
   <p>
     <strong>Company:</strong>
-    <%= rocket.company_id %>
+    <%= link_to rocket.company, rocket.company %>
   </p>
+
+  <% rocket.destinations.each do |destination| %>
+    <%= link_to destination, destination %>
+  <% end %>
 
   <p>
     <strong>Image:</strong>
-    <%= rocket.image %>
+    <%= image_tag rocket.image %>
     <br>
-
-    <p><%= rocket.id %></p>
   </p>
 
 </div>

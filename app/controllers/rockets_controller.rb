@@ -1,6 +1,10 @@
 class RocketsController < ApplicationController
   before_action :set_rocket, only: %i[ show edit update destroy ]
 
+
+  def choose
+    @destinations = Destination.find(params[:destId])
+  end
   # GET /rockets or /rockets.json
   def index
     @rockets = Rocket.all
@@ -65,6 +69,6 @@ class RocketsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def rocket_params
-      params.require(:rocket).permit(:name, :company_id, :image)
+      params.require(:rocket).permit(:name, :company_id, :image, destination_ids: [])
     end
 end
