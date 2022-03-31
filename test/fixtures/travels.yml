@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  destination_id: 1
+  rockets_id: 1
+  date: 2022-03-31
+  price: 1.5
+
+two:
+  destination_id: 1
+  rockets_id: 1
+  date: 2022-03-31
+  price: 1.5

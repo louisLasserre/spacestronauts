@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Rockets</h1>
+
+<div id="rockets">
+  <% @rockets.each do |rocket| %>
+    <%= render rocket %>
+    <p>
+      <%= link_to "Show this rocket", rocket %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New rocket", new_rocket_path %>

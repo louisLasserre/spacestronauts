@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @rocket %>
+
+<div>
+  <%= link_to "Edit this rocket", edit_rocket_path(@rocket) %> |
+  <%= link_to "Back to rockets", rockets_path %>
+
+  <%= button_to "Destroy this rocket", @rocket, method: :delete %>
+</div>
