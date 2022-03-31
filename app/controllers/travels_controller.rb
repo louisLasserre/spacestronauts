@@ -65,6 +65,6 @@ class TravelsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def travel_params
-      params.require(:travel).permit(:destination_id, :rockets_id, :date, :price)
+      params.require(:travel).permit(:destination_id, :rocket_id, :date, :price)
     end
 end

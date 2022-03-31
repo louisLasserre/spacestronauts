@@ -1,1 +1,11 @@
 <h1><%= @destinations.planet %></h1>
+
+<div class="rocketsContainer">
+  <% @destinations.rockets.each do |rocket| %>
+      <div class="rocketBox">
+        <%= link_to rocket.name, rocket %><br>
+        <%= rocket.company %>
+
+      </div>
+  <% end %>
+</div>

@@ -1,37 +1,9 @@
-<%= form_with(model: travel) do |form| %>
-  <% if travel.errors.any? %>
-    <div style="color: red">
-      <h2><%= pluralize(travel.errors.count, "error") %> prohibited this travel from being saved:</h2>
 
-      <ul>
-        <% travel.errors.each do |error| %>
-          <li><%= error.full_message %></li>
-        <% end %>
-      </ul>
-    </div>
-  <% end %>
+<%= simple_form_for travel do |f| %>
+  <%= f.input :date, as: :date, html5: true %>
+  <%= f.input :price, as: :float %>
+  <%= f.association :destination, include_blank: false %>
+  <%= f.association :rocket, include_blank: false %>
 
-  <div>
-    <%= form.label :destination_id, style: "display: block" %>
-    <%= form.number_field :destination_id %>
-  </div>
-
-  <div>
-    <%= form.label :rockets_id, style: "display: block" %>
-    <%= form.number_field :rockets_id %>
-  </div>
-
-  <div>
-    <%= form.label :date, style: "display: block" %>
-    <%= form.date_field :date %>
-  </div>
-
-  <div>
-    <%= form.label :price, style: "display: block" %>
-    <%= form.text_field :price %>
-  </div>
-
-  <div>
-    <%= form.submit %>
-  </div>
+  <%= f.button :submit %>
 <% end %>
