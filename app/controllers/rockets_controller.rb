@@ -3,11 +3,12 @@ class RocketsController < ApplicationController
 
 
   def choose
-    @destinations = Destination.find(params[:destId])
+    @destination = Destination.find(params[:destId])
   end
   # GET /rockets or /rockets.json
   def index
     @rockets = Rocket.all
+
   end
 
   # GET /rockets/1 or /rockets/1.json

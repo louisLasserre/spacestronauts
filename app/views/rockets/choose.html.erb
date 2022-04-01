@@ -1,11 +1,15 @@
-<h1><%= @destinations.planet %></h1>
+<h1><%= @destination.planet %></h1>
 
 <div class="rocketsContainer">
-  <% @destinations.rockets.each do |rocket| %>
+  <% @destination.rockets.each do |rocket| %>
       <div class="rocketBox">
         <%= link_to rocket.name, rocket %><br>
         <%= rocket.company %>
 
+        <br>
+        <%=  link_to "choose", controller: "travels", action: "selected", destId: @destination.id, rocketId: rocket.id %>
+
       </div>
   <% end %>
 </div>
+<!--link_to "choose", "travels/"@destination.id"/"rocket.id-->

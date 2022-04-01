@@ -1,0 +1,49 @@
+<h1>hey boys</h1>
+
+
+<%= simple_form_for Travel.first, url: "/updateTravels", method: "GET" do |f| %>
+
+  <%= f.association :destination, include_blank: false %>
+  <%= f.association :rocket, include_blank: false %>
+  <%= f.button :submit %>
+<% end %>
+
+
+<% if @travels.empty? %>
+  <p>aucun voyage ne correspondent à votre recherche</p>
+
+<% else %>
+  <p>des voyages correspondent à votre recherche</p>
+
+  <p>trier par :</p>
+  -<%= link_to "Prix", :sort => "price"%><br>
+  -<%= link_to "date", :sort => "date"%><br>
+
+  <p><%= @test %></p>
+
+
+
+
+  <% @travels.each do |travel| %>
+    <div class="travelBox">
+      <p>date :<%= travel.date %></p>
+      <p>prix :<%= travel.price %></p>
+
+
+      <h3>destionation</h3>
+      <p>planet :<%= travel.destination %></p>
+      <p>image :<%= travel.destination.image %></p>
+
+
+      <h3>Fusée</h3>
+      <p><%= travel.rocket %></p>
+      <p><%= travel.rocket.image%></p>
+
+      <h3>Company</h3>
+      <p>name: <%= travel.rocket.company %></p>
+      <p>image :<%= travel.rocket.company.image %></p>
+    </div>
+
+  <% end %>
+
+<% end%>

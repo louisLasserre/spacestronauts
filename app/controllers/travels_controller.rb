@@ -1,6 +1,17 @@
 class TravelsController < ApplicationController
   before_action :set_travel, only: %i[ show edit update destroy ]
 
+  def selected
+    @travels = Travel.where(destination_id: params[:destId], rocket_id: params[:rocketId]).order(params[:sort])
+    @actualUrl = request.path
+
+
+
+
+
+
+  end
+
   # GET /travels or /travels.json
   def index
     @travels = Travel.all
@@ -57,6 +68,13 @@ class TravelsController < ApplicationController
     end
   end
 
+  def updateTravels
+
+
+    redirect_to "/travels/#{update_travel_params[:destination_id]}/#{update_travel_params[:rocket_id]}"
+
+  end
+
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_travel
@@ -66,5 +84,8 @@ class TravelsController < ApplicationController
     # Only allow a list of trusted parameters through.
     def travel_params
       params.require(:travel).permit(:destination_id, :rocket_id, :date, :price)
+    end
+    def update_travel_params
+      params.require(:travel).permit(:destination_id, :rocket_id)
     end
 end
