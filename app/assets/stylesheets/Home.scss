@@ -1,0 +1,23 @@
+.HomeSection{
+  width: 30%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 20px;
+  p{
+    text-align: center;
+    color: rgba($color: #000000, $alpha: 0.7);
+  }
+
+}
+.homeBack{
+
+  position: absolute;top: 0;bottom: 0;left: 0;right: 0;
+
+
+}
+body{
+  margin: 0;
+  position: relative;
+}

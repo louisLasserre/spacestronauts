@@ -1,9 +1,73 @@
 .destBox{
   width: 80vw;
   margin: 20px  auto;
-  border: 2px solid black;
+
 }
 a{
   text-decoration: none;
   color: black;
+}
+h1{
+  font-weight: 400;
+  strong{
+    color: #DF8114;
+    font-weight: 500;
+  }
+}
+$width: 20vw;
+$height: calc(20vw * 2.2);
+.destBox{
+  width: $width;
+  height: $height;
+  background-size: cover;
+  background-position: top;
+  background-repeat: no-repeat;
+
+  position: relative;
+
+  display: flex;
+
+  article{
+
+    writing-mode: vertical-rl;
+    text-orientation: sideways;
+    transform: rotate(-180deg);
+    padding: 20px;
+    width: 100%;
+
+
+    //transform: rotate(-90deg);
+
+
+
+  }
+
+
+
+  p, h2{
+    color: white;
+    font-weight: 400;
+
+
+  }
+
+}
+#lune{
+  background-image: url('https://s3.us-west-2.amazonaws.com/secure.notion-static.com/b09a10b0-9892-4720-abc2-5b873d2af569/moon.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220401%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220401T142955Z&X-Amz-Expires=86400&X-Amz-Signature=350da5d6ef978c57f639d9100ee8e9d3fffa805f513c420c8ffbdde215de200b&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22moon.png%22&x-id=GetObject');
+
+}
+#Terre{
+  background-image: url('https://s3.us-west-2.amazonaws.com/secure.notion-static.com/291e59ef-4fce-4085-a19a-451f26cc0925/earthLeft.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220401%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220401T143040Z&X-Amz-Expires=86400&X-Amz-Signature=c49b4fb13709ce1792bb22e3c18d5b602af43d6835b4f7e1076d1f8e425736db&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22earthLeft.png%22&x-id=GetObject');
+
+}
+#earth{
+  background-image: url('https://s3.us-west-2.amazonaws.com/secure.notion-static.com/415c46e9-b87a-45cd-a13e-ee1c994d505d/earthRight.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220401%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220401T143058Z&X-Amz-Expires=86400&X-Amz-Signature=7ee76727c898830e6e222bbe47208d1b929263a79da204283f06ab1c7f7f0a49&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22earthRight.png%22&x-id=GetObject');
+}
+#Mars{
+  background-image: url('https://s3.us-west-2.amazonaws.com/secure.notion-static.com/263c77eb-fbfd-41f6-a4e8-77c042dd2163/maras.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Content-Sha256=UNSIGNED-PAYLOAD&X-Amz-Credential=AKIAT73L2G45EIPT3X45%2F20220401%2Fus-west-2%2Fs3%2Faws4_request&X-Amz-Date=20220401T143108Z&X-Amz-Expires=86400&X-Amz-Signature=f91e0cde253fe3e62c0174f97053aa766576f84b3805c701821e987b2289705f&X-Amz-SignedHeaders=host&response-content-disposition=filename%20%3D%22maras.png%22&x-id=GetObject');
+}
+.sectionChoose{
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
 }

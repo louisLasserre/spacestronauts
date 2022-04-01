@@ -1,0 +1,42 @@
+.button{
+  padding: 20px;
+  color: white;
+  background-color: black;
+}
+
+header{
+  padding: 10px 40px;
+
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  h1{
+    color: white;
+    margin: 0;
+  }
+  p, a{
+    color: white;
+    margin: 0;
+  }
+  p{
+    margin-bottom: 10px;
+
+  }
+
+  & > div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 120px;
+    padding-left: 20px;
+    border-left: #DF8114 solid;
+
+  }
+
+
+}
+main{
+  width: 90%;
+  margin: 0 auto;
+}

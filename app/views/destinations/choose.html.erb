@@ -1,11 +1,17 @@
-<h1>let's choose the destination</h1>
+<h1><strong>#1 </strong> Choisissez la destination</h1>
 
+
+<section class="sectionChoose">
 
 <% @destinations.each do |dest| %>
   <a href="/chooseDestination/<%= dest.id %>">
-  <div class="destBox">
-    <p><%= dest.planet %></p>
-    <p><%= dest.image %></p>
-    <p><%= dest.description %></p>
+  <div id="<%= dest.planet %>" class="destBox">
+    <article>
+      <h2><%= dest.planet %></h2>
+
+      <p><%= dest.description %></p>
+    </article>
+
   </div></a>
 <% end %>
+</section>
