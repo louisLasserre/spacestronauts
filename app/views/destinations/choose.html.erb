@@ -5,7 +5,8 @@
 
 <% @destinations.each do |dest| %>
   <a href="/chooseDestination/<%= dest.id %>">
-  <div id="<%= dest.planet %>" class="destBox">
+  <div class="destBox" style="background-image: url(<%= rails_blob_url(dest.banner) %>)">
+
     <article>
       <h2><%= dest.planet %></h2>
 

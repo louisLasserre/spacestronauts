@@ -70,6 +70,6 @@ class DestinationsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def destination_params
-      params.require(:destination).permit(:planet, :image, :description)
+      params.require(:destination).permit(:planet, :image, :description, :planetImg, :banner)
     end
 end
