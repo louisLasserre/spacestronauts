@@ -14,8 +14,8 @@ h1{
     font-weight: 500;
   }
 }
-$width: 20vw;
-$height: calc(20vw * 2.2);
+$width: 17vw;
+$height: calc(17vw * 2.2);
 .destBox{
   width: $width;
   height: $height;
@@ -26,7 +26,13 @@ $height: calc(20vw * 2.2);
   position: relative;
 
   display: flex;
+  box-shadow: inset 0 -90px 80px -15px rgb(0, 0, 0);
+  transition: transform 0.2s;
+  &:hover{
+    transform: translateY(-20px) scale(1.05);
 
+
+  }
   article{
 
     writing-mode: vertical-rl;
