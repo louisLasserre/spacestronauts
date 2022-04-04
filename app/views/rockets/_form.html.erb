@@ -1,7 +1,7 @@
 <%= simple_form_for rocket do |f| %>
   <%= f.input :name %>
   <%= f.association :company, include_blank: false %>
-  <%= f.input :image %>
+  <%= f.file_field :rocketImg, as: :file, direct_upload: true, input_html: { data: { direct_upload_url: rails_direct_uploads_url } }  %>
   <%= f.association :destinations, as: :check_boxes %>
   <%= f.button :submit %>
 <% end %>

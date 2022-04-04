@@ -1,7 +1,12 @@
 .button{
-  padding: 20px;
+  padding: 10px;
   color: white;
   background-color: black;
+}
+.Wbutton{
+  padding: 10px;
+  color: black !important;
+  background-color: white;
 }
 
 header{
@@ -39,4 +44,28 @@ header{
 main{
   width: 90%;
   margin: 0 auto;
+}
+
+.edit_travel > .select{
+  display: inline-block;
+  width: fit-content;
+
+  .select{
+    background-color: #DF8114;
+    padding: 5px;
+    border: 1px solid black;
+    font-family: 'cousine', monospace;
+  }
+
+
+}
+.edit_travel{
+  .btn{
+    font-family: 'cousine', monospace;
+    background-color: black;
+    border: none;
+    color: white;
+    padding: 7px;
+
+  }
 }

@@ -1,13 +1,20 @@
-<h1><%= @destination.planet %></h1>
-<%= image_tag @destination.planetImg %>
+<h1 class="destH1"><strong>#2 </strong> Choisissez la fusée</h1>
+<%= image_tag @destination.planetImg, class: 'planet' %>
+
+
 <div class="rocketsContainer">
   <% @destination.rockets.each do |rocket| %>
       <div class="rocketBox">
-        <%= link_to rocket.name, rocket %><br>
-        <%= rocket.company %>
+        <%= image_tag rocket.company.logo, class: 'logo' %>
+        <%= image_tag rocket.rocketImg, class: 'rocketImg' %>
+
+
+        <p><%= link_to rocket.name, rocket %></p>
+        <div class="border"></div>
+
 
         <br>
-        <%=  link_to "choose", controller: "travels", action: "selected", destId: @destination.id, rocketId: rocket.id %>
+        <%=  link_to "choisir", {controller: "travels", action: "selected", destId: @destination.id, rocketId: rocket.id }, class: 'Wbutton'%>
 
       </div>
   <% end %>

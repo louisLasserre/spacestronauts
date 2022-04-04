@@ -70,6 +70,6 @@ class RocketsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def rocket_params
-      params.require(:rocket).permit(:name, :company_id, :image, destination_ids: [])
+      params.require(:rocket).permit(:name, :company_id, :image, :rocketImg, destination_ids: [])
     end
 end

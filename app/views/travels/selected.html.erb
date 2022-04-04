@@ -1,49 +1,65 @@
-<h1>hey boys</h1>
+<h1><strong>#3 </strong> trouvez le trajet idéal</h1>
 
 
-<%= simple_form_for Travel.first, url: "/updateTravels", method: "GET" do |f| %>
 
-  <%= f.association :destination, include_blank: false %>
-  <%= f.association :rocket, include_blank: false %>
-  <%= f.button :submit %>
-<% end %>
+
+
 
 
 <% if @travels.empty? %>
   <p>aucun voyage ne correspondent à votre recherche</p>
+  <%= simple_form_for Travel.first, url: "/updateTravels", method: "GET" do |f| %>
+
+  <%= f.association :destination, include_blank: false, label: false  %>
+  <%= f.association :rocket, include_blank: false, label: false  %>
+  <%= f.button :submit, 'rechercher' %>
+<% end %>
 
 <% else %>
-  <p>des voyages correspondent à votre recherche</p>
+  <p>Voici les prochains départs correspondant à votre recherche: voyage autour de <strong><%= @travels.first.destination %></strong> à bord de <strong><%= @travels.first.rocket %></strong></p>
+  <%= simple_form_for Travel.first, url: "/updateTravels", method: "GET" do |f| %>
+  <p>Cela ne vous convient pas ?, <br>vous pouvez effectuer une nouvelle recherche :</p>
 
-  <p>trier par :</p>
-  -<%= link_to "Prix", :sort => "price"%><br>
-  -<%= link_to "date", :sort => "date"%><br>
-
-  <p><%= @test %></p>
-
-
-
-
-  <% @travels.each do |travel| %>
-    <div class="travelBox">
-      <p>date :<%= travel.date %></p>
-      <p>prix :<%= travel.price %></p>
-
-
-      <h3>destionation</h3>
-      <p>planet :<%= travel.destination %></p>
-      <p>image :<%= travel.destination.image %></p>
-
-
-      <h3>Fusée</h3>
-      <p><%= travel.rocket %></p>
-      <p><%= travel.rocket.image%></p>
-
-      <h3>Company</h3>
-      <p>name: <%= travel.rocket.company %></p>
-      <p>image :<%= travel.rocket.company.image %></p>
-    </div>
-
+  <%= f.association :destination, include_blank: false, label: false %>
+  <%= f.association :rocket, include_blank: false, label: false %>
+  <%= f.button :submit, 'rechercher' %>
   <% end %>
+
+  <p>Pour vous y retrouver, vous pouvez aussi trier par :</p>
+  <%= link_to "Prix", {:sort => "price" }, class:'button' %>
+  <%= link_to "date", {:sort => "date" }, class:'button' %><br>
+
+
+
+
+
+  <section class="travelBoxContainer">
+    <% @travels.each do |travel| %>
+      <div class="travelBox">
+        <div>
+          <p><%= travel.destination %></p>
+        </div>
+        <article>
+          <h3><%= travel.destination.description %></h3>
+          <p>date :<%= travel.date %></p>
+          <p>prix :<%= travel.price %></p>
+        </article>
+        <div>
+          <p><%= travel.rocket%></p>
+          <p>name: <%= travel.rocket.company %></p>
+        </div>
+
+
+
+
+
+
+
+
+
+      </div>
+
+    <% end %>
+  </section>
 
 <% end%>
