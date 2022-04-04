@@ -25,7 +25,11 @@ class TravelsController < ApplicationController
   def new
     @travel = Travel.new
     if current_user
-      @user = current_user
+        if current_user.role == "guest"
+          @user = 0
+        elsif current_user.role == "entreprise"
+          redirect_to "/users/sign_in"
+        end
     end
   end
 
