@@ -9,12 +9,14 @@
     <%= link_to rocket.company, rocket.company %>
   </p>
 
-  <% rocket.destinations.each do |destination| %>
-    <%= link_to destination, destination %>
-  <% end %>
+  <ul><p><strong>Peut aller sur :</p></strong>
+    <% rocket.destinations.each do |destination| %>
+      <li><%= link_to destination, destination %></li>
+    <% end %>
+  </ul>
 
   <p>
-    <strong>Putain d'Image:</strong>
+    <strong>Image:</strong>
     <!-- image_tag rocket.image-->
     <%= image_tag rocket.rocketImg %>
     <br>

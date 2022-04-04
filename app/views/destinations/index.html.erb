@@ -4,11 +4,13 @@
 
 <div id="destinations">
   <% @destinations.each do |destination| %>
-    <%= render destination %>
-    <p>
-      <%= link_to "Show this destination", destination %>
-    </p>
+    <div class="crudBox">
+      <%= render destination %>
+      <p>
+        <%= link_to "Show this destination", destination, class: "button" %>
+      </p>
+    </div>
   <% end %>
 </div>
 
-<%= link_to "New destination", new_destination_path %>
+<%= link_to "New destination", new_destination_path, class: "button" %>

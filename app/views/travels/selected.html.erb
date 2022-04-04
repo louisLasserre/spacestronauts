@@ -37,7 +37,7 @@
     <% @travels.each do |travel| %>
       <div class="travelBox">
         <div>
-          <p><%= travel.destination %></p>
+          <p><%= image_tag travel.destination.planetImg %></p>
         </div>
         <article>
           <h3><%= travel.destination.description %></h3>
@@ -45,8 +45,8 @@
           <p>prix :<%= travel.price %></p>
         </article>
         <div>
-          <p><%= travel.rocket%></p>
-          <p>name: <%= travel.rocket.company %></p>
+          <%= image_tag travel.rocket.company.logo %>
+          <%= image_tag travel.rocket.rocketImg%>
         </div>
 
 

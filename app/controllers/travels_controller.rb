@@ -24,6 +24,9 @@ class TravelsController < ApplicationController
   # GET /travels/new
   def new
     @travel = Travel.new
+    if current_user
+      @user = current_user
+    end
   end
 
   # GET /travels/1/edit
