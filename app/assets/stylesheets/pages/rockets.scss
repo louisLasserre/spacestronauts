@@ -67,3 +67,14 @@
   }
 
 }
+@media only screen and (max-width: 600px) {
+  .planetTitle{
+    display: none;
+  }
+  .planet{
+    z-index: -2;
+  }
+  .destH1{
+    margin-left: 21px;
+  }
+}

@@ -17,20 +17,35 @@
   <body>
     <header>
       <a href="/"><h1>Spastronauts</h1></a>
-      <%= link_to "Réserver un vol" , "/chooseDestination" %>
+      <%= link_to "Réserver un vol" , "/chooseDestination", class: 'reserverBtn' %>
       <div class="headerCompte">
         <% if user_signed_in? %>
           <p><%= current_user.email %></p>
           <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
-          <%= link_to "Logout", destroy_user_session_path, :method => :delete, :class => 'navbar-link'  %>
+          <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete, :class => 'navbar-link'  %>
         <% else %>
-          <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
-          <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+          <%= link_to "Créer un compte", new_user_registration_path, :class => 'navbar-link'  %> |
+          <%= link_to "Se connecter", new_user_session_path, :class => 'navbar-link'  %>
         <% end %>
       </div>
+      <h3 class="hamb" onclick="openH()">☰</h3>
+
 
 
     </header>
+    <section class="hambSection">
+      <h3 onclick="closeH()"class="Hbutton">+</h3>
+      <%= link_to "Réserver un vol" , "/chooseDestination", class: 'reserverBtn' %>
+      <% if user_signed_in? %>
+          <p><%= current_user.email %></p>
+          <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %>
+          <%= link_to "Se déconnecter", destroy_user_session_path, :method => :delete, :class => 'navbar-link'  %>
+        <% else %>
+          <%= link_to "Créer un compte", new_user_registration_path, :class => 'navbar-link'  %>
+          <%= link_to "Se connecter", new_user_session_path, :class => 'navbar-link'  %>
+        <% end %>
+
+    </section>
     <p class="notice"><%= notice %></p>
     <p class="alert"><%= alert %></p>
     <main>
@@ -38,3 +53,21 @@
     </main>
   </body>
 </html>
+
+<script>
+  const hamb = document.getElementsByClassName("hamb")
+  const hambSect = document.getElementsByClassName("hambSection")
+
+  //hamb[0].addEventListener('click', open())
+
+  function openH() {
+
+    hambSect[0].style.width = "50vw"
+
+  }
+  function closeH() {
+    hambSect[0].style.width = "0"
+  }
+
+
+</script>

@@ -1,14 +1,53 @@
 .button{
-  padding: 10px;
+  padding: 15px 40px;
   color: white;
   background-color: black;
+  position: relative;
+  margin: 30px;
+
 }
+.button::before,
+.button::after{
+  content: "";
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: inherit;
+  transition: all .4s;
+  border: solid #DF8114;
+}
+.button::before{
+  top: -10px;
+  left: -10px;
+  border-width: 3px 0 0 3px ;
+
+}
+.button::after{
+  bottom: -10px;
+  right: -10px;
+  border-width: 0px 3px 3px 0px;
+}
+.button:hover::before,
+.button:hover::after{
+  width: calc(100% + 17px);
+  height: calc(100% + 17px);
+
+}
+
+
 .Wbutton{
   padding: 10px;
   color: black !important;
   background-color: white;
 }
+.Bbutton{
+  padding:10px;
+  color: white;
+  background-color: black;
+  position: relative;
+  margin: 30px;
 
+}
 header{
   padding: 10px 40px;
 
@@ -19,6 +58,7 @@ header{
   h1{
     color: white;
     margin: 0;
+    width: 120px;
   }
   p, a{
     color: white;
@@ -38,9 +78,62 @@ header{
     border-left: #DF8114 solid;
 
   }
+.hamb{
+  display: none;
+}
+
+}
+@media only screen and (max-width: 600px) {
+  header{
+    & > div, .reserverBtn{
+      display: none;
+    }
+    .hamb{
+      display: block;
+    }
+    color: white;
+    h3{
+      font-size: 25px;
+      padding: 10px;margin: 0;
+    }
+  }
+}
+.hambSection{
+  position: fixed;
+  z-index: 10;
+  overflow: hidden;
+  right: 0;
+  top: 0;
+  height: 100vh;
+  width: 0vw;
+  background-color: rgba(0, 0, 0, 0.801);
+  color: white;
+  transition: all 0.4s;
+  padding-left: 10px;
+  h3{
+    font-size: 50px;font-weight: 300;
+    padding: 10px;margin: 0;
+    width: fit-content;
+    transform: rotate(45deg);
+
+  }
+  .Hbutton{
+    display: block;
+    margin-bottom: 30px;
+
+  }
+  a{
+    color: white;
+    width: 100%;
+    display: block;
+    margin: 20px 0;
+
+  }
 
 
 }
+
+
 main{
   width: 90%;
   margin: 0 auto;
@@ -68,4 +161,7 @@ main{
     padding: 7px;
 
   }
+}
+body{
+  background-color: rgb(240, 240, 240);
 }
